@@ -1,31 +1,32 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <transition name="fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style>
+<style lang="less">
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+        Microsoft YaHei, SimSun, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
 }
-#nav {
-  padding: 30px;
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.2s ease;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
 }
 </style>

@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import navTab from './modules/navTab'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
 
   },
@@ -12,5 +13,10 @@ export default new Vuex.Store({
   },
   actions: {
 
+  },
+  modules: {
+    navTab
   }
 })
+
+export default store
